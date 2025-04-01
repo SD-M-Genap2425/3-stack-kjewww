@@ -14,7 +14,7 @@ public class BracketValidatorTests
         var expression = "{[()]}";
 
         // Act
-        bool isValid = validator.ValidasiEkspresi(expression);
+        bool isValid = BracketValidator.ValidasiEkspresi(expression);
 
         // Assert
         Assert.IsTrue(isValid, "Expression should be valid");
@@ -28,7 +28,7 @@ public class BracketValidatorTests
         var expression = "{[(])}";
 
         // Act
-        bool isValid = validator.ValidasiEkspresi(expression);
+        bool isValid = BracketValidator.ValidasiEkspresi(expression);
 
         // Assert
         Assert.IsFalse(isValid, "Expression should be invalid");
@@ -42,7 +42,7 @@ public class BracketValidatorTests
         var expression = "";
 
         // Act
-        bool isValid = validator.ValidasiEkspresi(expression);
+        bool isValid = BracketValidator.ValidasiEkspresi(expression);
 
         // Assert
         Assert.IsTrue(isValid, "Empty expression should be valid");
@@ -56,7 +56,7 @@ public class BracketValidatorTests
         var expression = "(((";
 
         // Act
-        bool isValid = validator.ValidasiEkspresi(expression);
+        bool isValid = BracketValidator.ValidasiEkspresi(expression);
 
         // Assert
         Assert.IsFalse(isValid, "Expression with unmatched opening brackets should be invalid");
@@ -70,7 +70,7 @@ public class BracketValidatorTests
         var expression = ")))";
 
         // Act
-        bool isValid = validator.ValidasiEkspresi(expression);
+        bool isValid = BracketValidator.ValidasiEkspresi(expression);
 
         // Assert
         Assert.IsFalse(isValid, "Expression with unmatched closing brackets should be invalid");
